@@ -28,3 +28,17 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+# mine I added
+build
+# dist/*
+package
+.env
+.env.*
+!.env.example
+.yarn
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

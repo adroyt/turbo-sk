@@ -7,6 +7,7 @@ import {
   transformerVariantGroup,
   type UserConfig as UnoUserConfig,
 } from "unocss";
+import { colors } from "./_theme";
 
 // https://github.com/unocss/unocss/tree/main/packages/vite
 // https://github.com/unocss/unocss/tree/main/packages/vite#svelte
@@ -21,7 +22,9 @@ export const unoConfig: UnoUserConfig = {
   extractors: [extractorSvelte],
 
   // https://github.com/unocss/unocss#extend-theme
-  theme: {},
+  theme: {
+    colors,
+  },
 
   // https://github.com/unocss/unocss#custom-rules
   rules: [],

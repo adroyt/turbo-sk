@@ -5,7 +5,7 @@
   <title>Sveltekit & Unocss template</title>
 </svelte:head>
 
-<div transition-400 flex h-full select-none text-center>
+<div transition-400 flex h-full select-none text-center bg-coolBlue text-black>
   <div m-auto>
     <!-- svelte-ignore a11y-missing-content -->
     <div m-2 flex h-max items-center justify-center gap-2 text-2xl>
