@@ -1,7 +1,7 @@
 import adapter from "@sveltejs/adapter-auto";
 import preprocess from "svelte-preprocess";
 
-// :NOTE: Needs to be outside src for `svelte-kit sync` to work
+// :highlight: Needs to be outside src for `svelte-kit sync` to work
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
