@@ -1,1 +1,1 @@
-export * from "./dist/style";
+export * from "./dist/uno";
