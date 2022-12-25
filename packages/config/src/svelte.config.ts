@@ -1,11 +1,11 @@
 import adapter from "@sveltejs/adapter-auto";
-import preprocess from "svelte-preprocess";
 import type { Config } from "@sveltejs/kit";
+import { vitePreprocess } from "@sveltejs/kit/vite";
 
 const config: Config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: preprocess(),
+  preprocess: vitePreprocess(),
 
   kit: {
     adapter: adapter(),

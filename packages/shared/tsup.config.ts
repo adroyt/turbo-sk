@@ -1,11 +1,11 @@
 import { defineConfig } from "tsup";
-import { dependencies, devDependencies } from "./package.json";
+import { devDependencies } from "./package.json";
 
 export default defineConfig({
   // entry: ["src/index.ts"],
   entry: {
     index: "src/index.ts",
-    uno: "src/uno.config.ts",
+    theme: "src/theme/index.ts",
   },
   outDir: "dist",
   splitting: false,
@@ -15,6 +15,7 @@ export default defineConfig({
   format: [/* "cjs", */ "esm"],
   dts: true,
   platform: "browser",
-  external: Object.keys(dependencies).concat(Object.keys(devDependencies)),
+  // esbuildPlugins: [...macaronEsbuildPlugins()],
+  external: Object.keys(devDependencies),
   clean: true,
 });
