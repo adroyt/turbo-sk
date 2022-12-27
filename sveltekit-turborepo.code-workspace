@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "apps/desktop"
+    },
+    {
+      "path": "apps/mobile"
+    },
+    {
+      "path": "packages/config"
+    },
+    {
+      "path": "packages/ui"
+    },
+    {
+      "path": "packages/eslint-config-custom"
+    }
+  ]
+}

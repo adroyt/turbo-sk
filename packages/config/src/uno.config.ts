@@ -49,9 +49,9 @@ export const unoConfig: UnoConfig = {
 
   variants: [
     {
-      // adds support for "@min-[width]:class" and "@min-h-[width]:class"
+      // adds support for "@min-[width]:class" and "@max-[width]:class"
       // or
-      // "@min-width:class" and "@min-h-width:class"
+      // "@min-width:class" and "@max-width:class"
       name: "arbitrary-media-query",
       match(matcher) {
         // prefix with @ to specify that it's a media query
@@ -109,8 +109,31 @@ export const unoConfig: UnoConfig = {
           }
         }
 
-        return { matcher };
+        return void 0;
       },
+    },
+
+    matcher => {
+      const [m1, m2, m3] = ["scrollbar:", "scrollbar-track:", "scrollbar-thumb:"];
+      let matchedStr = "";
+
+      if (matcher.startsWith(m1)) {
+        matchedStr = m1;
+      } else if (matcher.startsWith(m2)) {
+        matchedStr = m2;
+      } else if (matcher.startsWith(m3)) {
+        matchedStr = m3;
+      } else {
+        return matcher;
+      }
+
+      return {
+        matcher: matcher.slice(matchedStr.length),
+        selector: s =>
+          `${s}::-webkit-scrollbar${
+            matchedStr == m2 ? "-track" : matchedStr == m3 ? "-thumb" : ""
+          }`,
+      };
     },
   ],
 
